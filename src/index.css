@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  --font-classic: "MS Sans Serif", "Tahoma", "Arial", sans-serif;
+  --color-win-gray: #c0c0c0;
+  --color-win-dark-gray: #808080;
+  --color-win-blue: #000080;
+  --color-win-white: #ffffff;
+  --color-win-black: #000000;
+  
+  --breakpoint-xs: 380px;
+}
+
+@layer base {
+  body {
+    @apply bg-[#008080] font-classic text-win-black selection:bg-win-blue selection:text-white;
+  }
+}
+
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility win-border-outset {
+  @apply border-2;
+  border-color: #ffffff #808080 #808080 #ffffff;
+}
+
+@utility win-border-inset {
+  @apply border-2;
+  border-color: #808080 #ffffff #ffffff #808080;
+}
+
+@utility win-window {
+  @apply bg-win-gray win-border-outset p-1;
+}
+
+@utility win-btn {
+  @apply bg-win-gray win-border-outset px-4 py-1 text-xs active:border-2 active:border-[#808080_#ffffff_#ffffff_#808080] transition-none;
+}
